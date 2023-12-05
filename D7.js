@@ -93,6 +93,22 @@ console.log(
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
 
+const dispari = [];
+
+let arraydis = 1;
+Array(50)
+  .fill()
+  .forEach(() => {
+    dispari.push(arraydis);
+    arraydis += 2;
+    // 50 operazioni, ad ognuna il valore iniziale di 1 vieni aggiunto ad array DISPARI e
+    // ARRAYDIS è incrementato di 2
+  });
+console.log(
+  "CREATO ARRAY CONTENENTE TUTTI I NUMERI DISPARI DA 1 A 99:",
+  dispari
+);
+
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
