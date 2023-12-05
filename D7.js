@@ -22,7 +22,7 @@ const numericArray = function () {
     const randomN = Math.floor(Math.random() * 101);
     array.push(randomN);
   }
-  console.log("CREATO ARRAY DI 10 ELEMENTI, VALORE RANDOM DA 1 A 100:", array);
+  console.log("CREATO ARRAY DI 10 NUMERI, VALORE RANDOM DA 1 A 100:", array);
   return array;
 };
 numericArray();
@@ -31,22 +31,63 @@ numericArray();
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
+// const pari = array.filter(array % 2 === 0);
+// console.log("VALORI PARI DI ARRAY PRECEDENTE", pari)
+const pari = function (num) {
+  const nodis = num.filter((numero) => numero % 2 === 0);
+  console.log("NUMERI PARI DI ARRAY PRECEDENTE:", nodis);
+  return nodis;
+};
+pari(array);
+
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+
+let somma = 0;
+// NUMERO è uno degli elementi di ARRAY, il successivo ogni volta che vengono sommati
+array.forEach((numero) => {
+  somma += numero;
+  console.log(
+    "SOMMA DI NUMERI DA ARRAY DI ESERCIZIO N2, SOMMA ATTUALE:",
+    somma
+  );
+});
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
+const sommaRed = array.reduce((totale, valoreCorrente) => {
+  // partendo da zero reduce sommerà ogni ValoreCorrente di ARRAY al Totale
+  return totale + valoreCorrente;
+}, 0);
+console.log("SOMMA DI NUMERI DA ARRAY DI ESERCIZIO N2, CON REDUCE:", sommaRed);
+
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+let n = 5;
+const increment = array.map((elemento) => elemento + n);
+console.log(
+  "OGNI VALORE DI ARRAY PRECEDENTE INCREMENTATO DI",
+  n,
+  ":",
+  increment
+);
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+
+const arrayStr = ["CIAO", "OGGI", "CHE", "SI", "FA"];
+const lunghezza = arrayStr.map((elemento) => elemento.length);
+console.log(
+  "CREATO NUOVO ARRAY DI STRINGHE DAL QUALE COPIO IN QUESTO ARRAY LO LORO LUNGHEZZA RISPETTIVA:",
+  lunghezza
+);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
